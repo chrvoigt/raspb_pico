@@ -7,10 +7,7 @@ from hcsr04 import HCSR04
 i2c = I2C(id=0,scl=Pin(1),sda=Pin(0),freq=100000)                             
 lcd = I2cLcd(i2c, 0x27, 2, 16) # LCD 16x2
 
-lcd.putstr('Hello World')
-
 sensor = HCSR04(trigger_pin=3, echo_pin=2)
-max_dist = 20
 
 while True:
     dist = int(sensor.distance_cm())
